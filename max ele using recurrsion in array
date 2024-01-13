@@ -1,0 +1,24 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<climits>
+using namespace std;
+
+int find_max_element(int arr[],int size,int i,int max_value)
+{
+    if(i == size)
+    {
+        return max_value;
+    }
+    max_value=max(max_value,arr[i]);
+    find_max_element(arr,size,i+1,max_value);
+}
+int main() {
+  int arr[]={1,5,3,7,9};
+  int size=sizeof(arr)/sizeof(arr[0]);
+  int i=0;
+  int max_value=INT_MIN;
+  
+  cout<<find_max_element(arr,size,i,max_value);
+
+    return 0;
+}
